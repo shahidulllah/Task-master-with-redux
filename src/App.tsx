@@ -1,19 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-import { Button } from './components/ui/button'
+import Navbar from './components/layout/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <>
-      <h1>Task Master</h1>
-      <div className="card">
-        <Button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </Button>
-      </div>
-    </>
+    <div>
+      <Navbar></Navbar>
+    </div>
   )
 }
 
