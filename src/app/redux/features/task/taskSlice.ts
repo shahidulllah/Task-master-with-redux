@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 import { TInitialState } from "./task.interface";
 
 const initialState: TInitialState = {
-    task: [
+    tasks: [
         {
             id: '12456987',
             title: 'Initialize Frontent',

@@ -8,5 +8,5 @@ interface ITask {
 }
 
 export interface TInitialState {
-  task: ITask[];
+  tasks: ITask[];
 }
