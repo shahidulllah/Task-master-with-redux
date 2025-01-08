@@ -9,5 +9,4 @@ export interface ITask {
 
 export interface TInitialState {
   tasks: ITask[];
-  filter: "all" | "high" | "medium" | "low"
 }

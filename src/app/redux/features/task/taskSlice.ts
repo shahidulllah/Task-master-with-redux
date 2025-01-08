@@ -20,8 +20,7 @@ const initialState: TInitialState = {
       isCompleted: false,
       priority: "Low",
     },
-  ],
-  filter: "all",
+  ]
 };
 
 const task = createSlice({
@@ -32,10 +31,6 @@ const task = createSlice({
 
 export const selectTasks = (state: RootState) => {
   return state.todo.tasks;
-};
-
-export const selectFilter = (state: RootState) => {
-  return state.todo.filter;
 };
 
 const taskSlice = task.reducer;
