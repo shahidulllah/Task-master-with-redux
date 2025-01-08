@@ -1,4 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { addTask } from "@/app/redux/features/task/taskSlice";
+import { useAppDispatch } from "@/app/redux/hooks";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -38,7 +40,10 @@ import { useForm } from "react-hook-form";
 
 export function AddTaskModal() {
   const form = useForm();
-  const onSubmit = (data: any) => {
+  const dispatch = useAppDispatch();
+  const onSubmit = (data) => {
+    dispatch(addTask(data));
+
     console.log(data);
   };
 
