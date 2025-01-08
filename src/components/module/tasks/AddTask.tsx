@@ -17,7 +17,13 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 
@@ -81,23 +87,25 @@ export function AddTaskModal() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Priority</FormLabel>
-                  <FormControl>
-                    <Select>
-                      <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="Select a fruit" />
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select pririty" />
                       </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel>Fruits</SelectLabel>
-                          <SelectItem value="apple">Apple</SelectItem>
-                          <SelectItem value="banana">Banana</SelectItem>
-                          <SelectItem value="blueberry">Blueberry</SelectItem>
-                          <SelectItem value="grapes">Grapes</SelectItem>
-                          <SelectItem value="pineapple">Pineapple</SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                  </FormControl>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="High">
+                       High
+                      </SelectItem>
+                      <SelectItem value="Medium">Medium</SelectItem>
+                      <SelectItem value="Low">
+                        Low
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
                 </FormItem>
               )}
             />
