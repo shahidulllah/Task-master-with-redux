@@ -25,7 +25,9 @@ const TaskCard = ({ task }: IProps) => {
               "bg-red-500": task.priority === "High",
             })}
           ></div>
-          <h1>{task.title}</h1>
+          <h1 className={cn({ "line-through": task.isCompleted })}>
+            {task.title}
+          </h1>
         </div>
         <div className="flex gap-3 items-center">
           <Button variant="link" className="p-0 text-red-500">
