@@ -28,6 +28,13 @@ const task = createSlice({
       const addedData = createTask(action.payload);
       state.tasks.push(addedData);
     },
+    toggleCompleteState: (state, action: PayloadAction<string>) => {
+      state.tasks.forEach((task) =>
+        task.id === action.payload
+          ? (task.isCompleted = !task.isCompleted)
+          : task
+      );
+    },
   },
 });
 
