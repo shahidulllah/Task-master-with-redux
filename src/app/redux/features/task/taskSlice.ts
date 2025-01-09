@@ -3,7 +3,16 @@ import { ITask, TInitialState } from "./task.interface";
 import { RootState } from "../../store";
 
 const initialState: TInitialState = {
-  tasks: [],
+  tasks: [
+    {
+      id: "xs0nmsSFpD2ujN4RsuOXQ",
+      isCompleted: false,
+      title: "Development",
+      description: "The journey of MERN Stack web development",
+      dueDate: "2025-01-22T18:00:00.000Z",
+      priority: "Medium",
+    },
+  ],
 };
 
 type DraftTask = Pick<ITask, "title" | "description" | "dueDate" | "priority">;
