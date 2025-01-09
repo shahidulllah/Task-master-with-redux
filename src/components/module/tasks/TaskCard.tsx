@@ -31,7 +31,10 @@ const TaskCard = ({ task }: IProps) => {
           <Button variant="link" className="p-0 text-red-500">
             <h6 onClick={() => dispatch(deleteTask(task.id))}>Delete</h6>
           </Button>
-          <Checkbox onClick={() => dispatch(toggleCompleteState(task.id))} />
+          <Checkbox
+            checked={task.isCompleted}
+            onClick={() => dispatch(toggleCompleteState(task.id))}
+          />
         </div>
       </div>
       <p className="mt-5">{task.description}</p>
