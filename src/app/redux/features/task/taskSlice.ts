@@ -52,7 +52,7 @@ export const selectTasks = (state: RootState) => {
   return state.todo.tasks;
 };
 
-export const { addTask, toggleCompleteState, deleteTask } = task.actions;
+export const { addTask, toggleCompleteState, deleteTask, updateFilter } = task.actions;
 
 const taskSlice = task.reducer;
 export default taskSlice;
