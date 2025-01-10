@@ -9,7 +9,6 @@ const Tasks = () => {
   const tasks = useAppSelector(selectTasks);
   const dispatch = useDispatch();
 
-  console.log(tasks);
   return (
     <div className="mx-auto max-w-7xl px-5 mt-5">
       <div className="flex justify-end items-center gap-5">
