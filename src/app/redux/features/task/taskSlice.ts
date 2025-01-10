@@ -10,7 +10,7 @@ const initialState: TInitialState = {
       title: "Development",
       description: "The journey of MERN Stack web development",
       dueDate: "2025-01-22T18:00:00.000Z",
-      priority: "Medium",
+      priority: "medium",
     },
   ],
   filter: "all",
@@ -42,17 +42,28 @@ const task = createSlice({
       state.tasks = state.tasks.filter((task) => task.id !== action.payload);
     },
 
-   updateFilter: (state, action: PayloadAction<TFilterOptions>) => {
-     state.filter = action.payload
+    updateFilter: (state, action: PayloadAction<TFilterOptions>) => {
+      state.filter = action.payload;
     },
   },
 });
 
 export const selectTasks = (state: RootState) => {
-  return state.todo.tasks;
+  const filter = state.todo.filter;
+
+  if (filter === "low") {
+    return state.todo.tasks.filter((task) => task.priority === "low");
+  } else if (filter === "medium") {
+    return state.todo.tasks.filter((task) => task.priority === "medium");
+  } else if (filter === "high") {
+    return state.todo.tasks.filter((task) => task.priority === "high");
+  } else {
+    return state.todo.tasks;
+  }
 };
 
-export const { addTask, toggleCompleteState, deleteTask, updateFilter } = task.actions;
+export const { addTask, toggleCompleteState, deleteTask, updateFilter } =
+  task.actions;
 
 const taskSlice = task.reducer;
 export default taskSlice;
