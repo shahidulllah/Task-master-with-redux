@@ -13,8 +13,8 @@ const Tasks = () => {
       <div className="flex justify-end items-center gap-5">
         <h1 className="mr-auto">Tasks</h1>
 
-        <Tabs>
-          <TabsList className="grid w-full grid-cols-2">
+        <Tabs defaultValue="all">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="high">High</TabsTrigger>
             <TabsTrigger value="medium">Medium</TabsTrigger>
