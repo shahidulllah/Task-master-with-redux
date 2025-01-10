@@ -1,5 +1,5 @@
 import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
-import { ITask, TInitialState } from "./task.interface";
+import { ITask, TFilterOptions, TInitialState } from "./task.interface";
 import { RootState } from "../../store";
 
 const initialState: TInitialState = {
@@ -13,6 +13,7 @@ const initialState: TInitialState = {
       priority: "Medium",
     },
   ],
+  filter: "all",
 };
 
 type DraftTask = Pick<ITask, "title" | "description" | "dueDate" | "priority">;
@@ -28,6 +29,7 @@ const task = createSlice({
       const addedData = createTask(action.payload);
       state.tasks.push(addedData);
     },
+
     toggleCompleteState: (state, action: PayloadAction<string>) => {
       state.tasks.forEach((task) =>
         task.id === action.payload
@@ -35,8 +37,13 @@ const task = createSlice({
           : task
       );
     },
+
     deleteTask: (state, action: PayloadAction<string>) => {
       state.tasks = state.tasks.filter((task) => task.id !== action.payload);
+    },
+
+   updateFilter: (state, action: PayloadAction<TFilterOptions>) => {
+     state.filter = action.payload
     },
   },
 });

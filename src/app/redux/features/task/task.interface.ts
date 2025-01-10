@@ -7,6 +7,9 @@ export interface ITask {
   priority: "High" | "Medium" | "Low";
 }
 
+export type TFilterOptions = "all" | "high" | "medium" | "low";
+
 export interface TInitialState {
   tasks: ITask[];
+  filter:TFilterOptions 
 }
