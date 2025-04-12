@@ -11,5 +11,5 @@ export type TFilterOptions = "all" | "high" | "medium" | "low";
 
 export interface TInitialState {
   tasks: ITask[];
-  filter:TFilterOptions 
+  filter: TFilterOptions;
 }
